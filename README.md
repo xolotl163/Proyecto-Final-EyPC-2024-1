@@ -34,19 +34,19 @@ Instrucciones:
         add: [holder1/destino], [holder2] -> suma los operandos
         sub: [holder1/destino], [holder2] -> resta los operandos
         mul: [holder1/destino], [holder2] -> multiplica los operandos
-        sqr: [holder1/destino], [holder2] -> divide los operandos y devuelve 
-        pwr: [holder1/destino], [holder2]
-        divC: [holder1/destino], [holder2]
-        divR: [holder1/destino], [holder2]
+        sqr: [holder1/destino], [holder2] -> raiz enesima de los operandos
+        pwr: [holder1/destino], [holder2] -> potencia enesima de los operandos
+        divC: [holder1/destino], [holder2] -> divide los operandos y devuelve el cociente
+        divR: [holder1/destino], [holder2] -> divide los operandos y devuelve el residuo
     
 
     ~ logicas o a nivel de bit:
     
         and: [holder1/destino], [holder2]
-        not: [holder1/destino], [holder2]
-        cpl: [holder1/destino], [holder2]
-        mbl: [holder1/destino], [holder2]
-        mbr: [holder1/destino], [holder2]
+        not: [holder1/destino], [holder2] 
+        mbl: [holder1/destino], [holder2] -> se mueve una cantidad n de bits al operando 1 a la izquierda
+        mbr: [holder1/destino], [holder2] -> se mueve una cantidad n de bits al operando 1 a la derecha
+        cpl: [holder1/destino]            -> complemento a bits del operando
 
 Registros: 
 
@@ -64,11 +64,11 @@ Estructuras de datos requeridas para el backend:
 
 Requerimientos del Front End:
 
-    -> Minimamente se van a requerir [] ventanas con los siguientes propositos:
+    -> Minimamente se van a requerir [numero todavia no especificado] ventanas con los siguientes propositos:
 
         Mostrar el pseudocodigo nasm
-        mostrar el equivalente binario del pseudocodigo nasm
-            
+        Mostrar el equivalente binario del pseudocodigo nasm
+        
 
 
 
@@ -78,4 +78,3 @@ Requerimientos del Front End:
 
  
         
-# Proyecto-Final-EyPC-2024-1
