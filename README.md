@@ -28,7 +28,6 @@ Instrucciones:
         04.- cmp [], []  -> compara operandos
         05.- divC [], [] -> divide operandos, retorna cociente
         06.- divR [], [] -> divide operandos, retorna residuo
-
     
     ~ logicas
     
