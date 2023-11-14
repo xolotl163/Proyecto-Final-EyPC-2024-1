@@ -65,19 +65,19 @@ Registros:
 
     ~ Proposito general:
 
-        Pueden Alamacenar hasta un maximo de 16 bits:
-
-            Ah -> Se divide en Al y Ah
-            Bh -> Se divide en Bl y Bh
-            Ch -> Se divide en Cl y Ch
-            Eh -> Se divide en El y Eh
+        r1      r4
+        r2      r5
+        r3      r6
 
     ~ Uso de Stacks:
 
-        Pueden almacenar hasta un maximo de 20 bits, no tiene secciones:
+        rSF -> registro stack de funciones
+        rSA -> registro stack de argumentos
 
-            stAR -> stack Argument Register
-            stFR -> sstack Function Register
+    ~ Lectura Escritura:
+
+        rR -> registro de lectura
+        rW -> regsitro de escritura
 
     ~ Banderas (flags):
 
