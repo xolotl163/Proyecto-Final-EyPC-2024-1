@@ -20,41 +20,47 @@ Descripción general:
 
 Instrucciones:
 
-    ~ Mas comunes o generales
+    ~ Arimeticas
         
-        1.- mov [holder1/destino], [holder2] -> mueve holder 2 a holder 1
-        2.- cmp [holder1/destino], [holder2] -> comparacion directa entre los operandos
-        3.- equ [holder1/destino], [holder2] -> asignacion entre los operandos
-        4.- shw [holder1/destino], [holder2] -> muestra mensaje en pantalla
-        5.- inc [holder1/destino], [holder2] -> incrementa el operando en una unidad  
-        6.- dec [holder1/destino], [holder2] -> decrementa el operando en una unidad
-    
-    ~ Aritmeticas o matematicas
+        01.- add [], []  -> suma operandos
+        02.- sub [], []  -> resta operandos
+        03.- mul [], []  -> producto operandos
+        04.- cmp [], []  -> compara operandos
+        05.- divC [], [] -> divide operandos, retorna cociente
+        06.- divR [], [] -> divide operandos, retorna residuo
 
-        7.-  add [holder1/destino], [holder2] -> suma los operandos
-        8.-  sub [holder1/destino], [holder2] -> resta los operandos
-        9.-  mul [holder1/destino], [holder2] -> multiplica los operandos
-        10.- sqr [holder1/destino], [holder2] -> raiz enesima de los operandos
-        11.- pwr [holder1/destino], [holder2] -> potencia enesima de los operandos
-        12.- divC [holder1/destino], [holder2] -> divide los operandos y devuelve el cociente
-        13.- divR [holder1/destino], [holder2] -> divide los operandos y devuelve el residuo
     
-
-    ~ logicas o a nivel de bit:
+    ~ logicas
     
-        14.- and [holder1/destino], [holder2]
-        15.- not [holder1/destino], [holder2] 
-        16.- mbl [holder1/destino], [holder2] -> se mueve una cantidad n de bits al operando 1 a la izquierda
-        17.- mbr [holder1/destino], [holder2] -> se mueve una cantidad n de bits al operando 1 a la derecha
-        18.- cpl [holder1/destino]            -> complemento a bits del operando
+        07.- and [], [] 
+        08.- or  [], []
+        09.- not [], []
+        10.- xor [], []
+        11.- shl [a], [b] -> mueve b cantidad de bits a la izquierda de a 
+        12.- shr [a], [b] -> mueve b cantidad de bits a la derecha de a
+        13.- rol [], []   -> rotación cantidad b de bits a la izquierda de a
+        14.- ror [], []   -> rotación cantidad b de bits a la derecha de a
+        15.- test [], []  -> se hace un and entre los operandos, pero solo afecta las banderas, no se almacena resultado
 
-    ~ Uso de Stacks:
+    ~ administración de memoria:
+    
+        16.- mov [a], [b] -> mueve los datos de 'b' a 'a', 'a' es un registro de proposito general
+        17.- wrt []       -> se muestran datos en pantalla o en consola (bash/shell)
+        18.- read []      -> se leen datos del teclado y se almacenan en el operando
+        
+    ~ Uso de Stacks y funciones:
 
         19.- call [function] -> se llama a la función indicada y se hace push al stack de funciones
         20.- puAS [holder]   -> se hace push al stack de argumentos
         21.- popSF           -> se hace pop al stack de funciones
         22.- popAS           -> se hace pop al stack de argumentos
-
+        23.- jmp [] -> se salta el programa a la dirección operando
+        24.- je [] -> se salta el programa a la dirección operando si bandera equal es 1
+        25.- jne [] -> se salta el programa a la dirección operando si bendera equal es 0
+        26.- ja [] -> se salta el programa a la dirección operando si "está por arriba"
+        27.- jae [] -> se salta el programa a la dirección operando si "esta por arriba o es igual"
+        28.- jb [] -> se salta el programa a la dirección operando si "esta por abajo"
+        29.- jbe [] -> se salta el programa a la dirección operando si "esta por abajo o es igual"
 
 Registros: 
 
