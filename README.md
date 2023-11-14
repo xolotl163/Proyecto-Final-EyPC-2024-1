@@ -54,13 +54,13 @@ Instrucciones:
         20.- puAS [holder]   -> se hace push al stack de argumentos
         21.- popSF           -> se hace pop al stack de funciones
         22.- popAS           -> se hace pop al stack de argumentos
-        23.- jmp [] -> se salta el programa a la dirección operando
-        24.- je [] -> se salta el programa a la dirección operando si bandera equal es 1
-        25.- jne [] -> se salta el programa a la dirección operando si bendera equal es 0
-        26.- ja [] -> se salta el programa a la dirección operando si "está por arriba"
-        27.- jae [] -> se salta el programa a la dirección operando si "esta por arriba o es igual"
-        28.- jb [] -> se salta el programa a la dirección operando si "esta por abajo"
-        29.- jbe [] -> se salta el programa a la dirección operando si "esta por abajo o es igual"
+        23.- jmp []          -> se salta el programa a la dirección operando
+        24.- je  []          -> se salta el programa a la dirección operando si bandera equal es 1
+        25.- jne []          -> se salta el programa a la dirección operando si bendera equal es 0
+        26.- ja  []          -> se salta el programa a la dirección operando si "está por arriba"
+        27.- jae []          -> se salta el programa a la dirección operando si "esta por arriba o es igual"
+        28.- jb  []          -> se salta el programa a la dirección operando si "esta por abajo"
+        29.- jbe []          -> se salta el programa a la dirección operando si "esta por abajo o es igual"
 
 Registros: 
 
