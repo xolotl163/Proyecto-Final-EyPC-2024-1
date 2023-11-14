@@ -53,7 +53,7 @@ Instrucciones:
         19.- call [function] -> se llama a la función indicada y se hace push al stack de funciones
         20.- puAS [holder]   -> se hace push al stack de argumentos
         21.- popSF           -> se hace pop al stack de funciones
-        22.- popAs           -> se hace pop al stack de argumentos
+        22.- popAS           -> se hace pop al stack de argumentos
 
 
 Registros: 
@@ -74,7 +74,7 @@ Registros:
             stAR -> stack Argument Register
             stFR -> sstack Function Register
 
-    ~ Banderas (flags): 
+    ~ Banderas (flags):
 
         CF -> Carry Flag , bandera de acarreo
         OF -> Overflow Flag, bandera de desborde
