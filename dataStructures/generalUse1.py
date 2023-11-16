@@ -33,7 +33,12 @@ class dictionary:
         self.getDictionary()[ key ] = newElement
 
 
-
+class Stack:
+    
+    def __init__(self, name):
+        self.name = name
+        self.stack = [0]
+        self.stackHead = self.stack[0]
 
 """ creación de las estructas y los datos """
 
