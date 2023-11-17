@@ -10,6 +10,6 @@ instructions = generalUses.Instructions
 def main():
 
     print( instructions.getDictionary()['and'] )
-
+    print( flags.getDictionary()['ZF'] )
     pass
 main()
