@@ -6,3 +6,6 @@ import dataStructures.generalUse1 as generalUses
 flags = generalUses.Flags
 registers = generalUses.Registers
 instructions = generalUses.Instructions
+
+def main():
+    pass
