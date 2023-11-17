@@ -23,8 +23,8 @@ class Dictionary:
 
     #general methods
 
-    def addElement(self, newElement, key):
-        self.getDictionary()[ key, newElement ]
+    def addElement(self, key, newElement):
+        self.getDictionary()[ key ] = newElement
 
     def getElement(self, key):
         return self.getDictionary()[ key ]
@@ -34,11 +34,41 @@ class Dictionary:
 
 
 class Stack:
-    
+
+    #constructor    
     def __init__(self, name):
         self.name = name
-        self.stack = [0]
+        self.stack = [0] #vacía, cero por default
         self.stackHead = self.stack[0]
+        self.indexHead = 0
+
+    #setter and getters
+    def setName(self, newName):
+        self.name = newName
+
+    def setStackHead(self, newHead):
+        self.stackHead = newHead
+    
+    def setStack(self, newStack):
+        self.stack = newStack
+
+    def getName(self):
+        return self.name
+
+    def getStackHead(self):
+        return self.stackHead
+    
+    def getStack(self):
+        return self.stack
+    
+    #general methods to the class
+    def push(self, newElement):
+        self.getStack().append( newElement )
+        self.indexHead = len( self.getStack() ) - 1
+    
+    def pop(self, index):
+        self.getStack().pop( index )
+        self.indexHead = len( self.getStack() ) - 1
 
 """ creación de las estructas y los datos """
 

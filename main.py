@@ -8,4 +8,8 @@ registers = generalUses.Registers
 instructions = generalUses.Instructions
 
 def main():
+
+    print( instructions.getDictionary()['and'] )
+
     pass
+main()
