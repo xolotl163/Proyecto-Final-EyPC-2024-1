@@ -1,5 +1,5 @@
 
-#definición de las distintas estrucutras de datos necesarias para el programa
+"""definición de las distintas estrucutras de datos necesarias para el programa"""
 
 class Dictionary:
 
@@ -88,6 +88,7 @@ Instructions = Dictionary("instructions")
 Flags.addDictionary("bool")
 Flags.addDictionary("binary")
 Registers.addDictionary("binary")
+Registers.addDictionary("data")
 Instructions.addDictionary("binary")
 
 #se añaden los datos
@@ -104,6 +105,17 @@ Flags.addElement( "binary", "ZF",  "0010")
 Flags.addElement( "binary", "EF",  "0011")
 Flags.addElement( "binary", "GF",  "0100")
 Flags.addElement( "binary", "SMF", "0101")
+
+Registers.addElement( "data", "r1", None )
+Registers.addElement( "data", "r2", None )
+Registers.addElement( "data", "r3", None )
+Registers.addElement( "data", "r4", None )
+Registers.addElement( "data", "r5", None )
+Registers.addElement( "data", "r6", None )
+Registers.addElement( "data", "rR", None )
+Registers.addElement( "data", "rW", None )
+Registers.addElement( "data", "rSA", None )
+Registers.addElement( "data", "rSF", None )
 
 Registers.addElement( "binary", "r1",  "0000")
 Registers.addElement( "binary", "r2",  "0001")
