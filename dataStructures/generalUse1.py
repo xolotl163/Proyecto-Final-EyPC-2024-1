@@ -1,6 +1,7 @@
 
 """definición de las distintas estrucutras de datos necesarias para el programa"""
 
+#sección definicion de clases
 class Dictionary:
 
     #constructor
@@ -76,6 +77,147 @@ class Stack:
     def pop(self, index):
         self.getStack().pop( index )
         self.indexHead = len( self.getStack() ) - 1
+
+"""seccion definicion de funciones"""
+
+#funciones auxiliares
+def fillGaps( a1, a2 ):
+    size1 = len(a1)
+    size2 = len(a2)
+
+    if size1 == size2:
+        return
+
+    if size1 > size2:
+        top = size1
+        bottom = size2
+        #greater = a1
+        smaller = a2
+
+        gap = top - bottom
+        i = 0
+        while i < gap:
+            smaller = "0" +  smaller
+            i += 1
+
+        a2 = aux
+
+    else:
+        top = size2
+        bottom = size1
+        #greater = a2
+        smaller = a1
+
+        gap = top - bottom
+        i = 0
+        while i < gap:
+            aux = "0" +  smaller
+            i += 1
+
+        a1 = aux
+
+#arimeticas
+def add( a1, a2 ):
+    regAx = a1 + a2
+
+def sub( a1, a2 ):
+    a1 = a1 - a2
+
+def mul( a1, a2 ):
+    a1 = a1 * a2
+
+def cmp( a1, a2 ):
+
+    #se ponen a valor inicial (false) las banderas de comparacion
+    Flags.getDictionary("bool")["EF"] = False
+    Flags.getDictionary("bool")["GF"] = False
+    Flags.getDictionary("bool")["SMF"] = False
+
+    if a1 == a2:
+        Flags.getDictionary("bool")["EF"] = True
+    elif a1 > a2:
+        Flags.getDictionary("bool")["GF"] = True
+    elif a1 < a2:
+        Flags.getDictionary("bool")["SMF"] = True
+    
+def divC( a1, a2 ):
+    a1 = a1 / a2
+
+def divR( a1, a2 ):
+    a1 = a1 % a2
+
+#logicas
+def AND( a1, a2 ):
+
+    fillGaps( a1, a2 )
+    size = len(a1)
+
+    i = 0
+    while i < size:
+        if (a1[i] == '1') and (a2[i] == '1'):
+            a1[i] == '1'
+        elif (a1[i] == '1') and (a2[i] == '0'):
+            a1[i] == '0'
+        elif (a1[i] == '0') and (a2[i] == '1'):
+            a1[i] == '0'
+        elif (a1[i] == '0') and (a2[i] == '0'):
+            a1[i] == '0'
+
+        i += 1
+
+def OR( a1, a2 ):
+    
+    fillGaps( a1, a2 )
+    size = len(a1)
+
+    i = 0
+    while i < size:
+        if (a1[i] == '1') or (a2[i] == '1'):
+            a1[1] = '1'
+        i += 1
+
+def NOT( a1 ):
+    
+    size = len(a1)
+
+    i = 0
+    while i < size:
+        if a1[i] == '1':
+            a1[i] = '0'
+        elif a1[i] == '0':
+            a1[i] = '1'
+        i += 1 
+
+def XOR( a1, a2 ):
+    
+    fillGaps( a1, a2 )
+    size = len(a1)
+
+    i = 0
+    while i < size:
+        if (a1[i] == '1') and (a2[i] == '1'):
+            a1[i] == '0'
+        elif (a1[i] == '1') and (a2[i] == '0'):
+            a1[i] == '1'
+        elif (a1[i] == '0') and (a2[i] == '1'):
+            a1[i] == '1'
+        elif (a1[i] == '0') and (a2[i] == '0'):
+            a1[i] == '0'
+        i += 1
+
+def shl( a1, n ):
+
+    i = 0
+    while i < n:
+        a1 = a1 + "0"
+        i += 1
+
+def shr( a1, n ):
+    
+    i = 0 
+    while i < n:
+        a1 = "0" + a1
+        i += 1
 
 """ creación de las estructas y los datos """
 

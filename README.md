@@ -33,7 +33,7 @@ Instrucciones:
     
         07.- and [], [] 
         08.- or  [], []
-        09.- not [], []
+        09.- not []
         10.- xor [], []
         11.- shl [a], [b] -> mueve b cantidad de bits a la izquierda de a 
         12.- shr [a], [b] -> mueve b cantidad de bits a la derecha de a
