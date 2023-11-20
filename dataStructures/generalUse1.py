@@ -46,8 +46,8 @@ class Stack:
     #constructor    
     def __init__(self, name):
         self.name = name
-        self.stack = [0] #vacía, cero por default
-        self.stackHead = self.stack[0]
+        self.stack = [] #vacía, cero por default
+        self.stackHead = 0
         self.indexHead = 0
 
     #setter and getters
@@ -55,10 +55,15 @@ class Stack:
         self.name = newName
 
     def setStackHead(self, newHead):
-        self.stackHead = newHead
+        size = len( self.getStack() )
+        self.stackHead = self.getStack()[size-1]
+        self.indexHead = size-1
     
     def setStack(self, newStack):
         self.stack = newStack
+
+    def getStack(self):
+        return self.stack
 
     def getName(self):
         return self.name
@@ -66,17 +71,21 @@ class Stack:
     def getStackHead(self):
         return self.stackHead
     
-    def getStack(self):
-        return self.stack
-    
     #general methods to the class
     def push(self, newElement):
-        self.getStack().append( newElement )
-        self.indexHead = len( self.getStack() ) - 1
-    
+
+        if len( self.getStackHead() ) == 0:
+            self.getStack().append( newElement )
+            self.setStackHead( self.getStack()[0] )
+        else:
+            self.getStack().append( newElement )
+            size = len( self.getStack() )
+            self.setStackHead( self.getStack()[size-1] )
+
     def pop(self, index):
         self.getStack().pop( index )
-        self.indexHead = len( self.getStack() ) - 1
+        size = len( self.getStack() )
+        self.setStackHead( self.getStack()[size-1] )
 
 """seccion definicion de funciones"""
 
@@ -219,12 +228,91 @@ def shr( a1, n ):
         a1 = "0" + a1
         i += 1
 
+def ROR( a1, n ):
+
+    size = len(a1)
+    aux1 = []
+    aux2 = []
+
+    A = size - n
+    for i in range( A, size ):
+        aux1.append( a1[i] )
+    
+    B = size - A
+    for i in range( 0, B ):
+        aux2.append( a1[i] )
+
+    a1 = aux1 + aux2
+
+def ROL( a1, n ):
+
+    size = len(a1)
+    aux1 = []
+    aux2 = []
+
+    for i in range( 0, n ):
+        aux1.append( a1[i] )
+
+    for i in range( n, size ):
+        aux2.append( a1[i] )
+
+    a1 = aux2 + aux1
+
+def test( a1, a2 ):
+    pass
+
+def mov( target, origin ):
+    Registers.editElement( "data", target, origin )
+
+def wrt( message ):
+    print( message )
+
+def read( target ):
+    target = input()
+
+#uso de stacks y funciones
+def call( name ):
+    pass 
+
+def puAS( a1 ):
+    ArgumentStack.push( a1 )
+
+def popSF():
+    FunctionStack.pop()
+
+def popAS():
+    ArgumentStack.pop()
+
+def jmp():
+    pass
+
+def je():
+    pass
+
+def jne():
+    pass
+
+def ja():
+    pass
+
+def jae():
+    pass
+
+def jb():
+    pass
+
+def jbe():
+    pass
+
 """ creación de las estructas y los datos """
 
 #instanciación de los objetos
 Flags = Dictionary("flags")
 Registers = Dictionary("registers")
 Instructions = Dictionary("instructions")
+
+FunctionStack = Stack("function stack")
+ArgumentStack = Stack("argument stack")
 
 #creación de los diccionarios
 Flags.addDictionary("bool")
