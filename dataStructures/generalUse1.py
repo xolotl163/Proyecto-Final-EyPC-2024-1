@@ -261,6 +261,7 @@ def ROL( a1, n ):
 def test( a1, a2 ):
     pass
 
+#administracion de memoria
 def mov( target, origin ):
     Registers.editElement( "data", target, origin )
 

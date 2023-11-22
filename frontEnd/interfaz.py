@@ -57,4 +57,4 @@ load_button_derecha = tk.Button(root, text="Cargar Archivo traducido", command=c
 load_button_derecha.pack(side=tk.RIGHT, pady=5)
 
 # Iniciar el bucle principal de la aplicación
-root.mainloop()
+#root.mainloop() -> se comenta para pasar la llamada al metodo al archivo main
