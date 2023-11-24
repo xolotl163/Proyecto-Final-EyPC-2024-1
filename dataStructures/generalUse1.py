@@ -284,27 +284,6 @@ def popSF():
 def popAS():
     ArgumentStack.pop()
 
-def jmp():
-    pass
-
-def je():
-    pass
-
-def jne():
-    pass
-
-def ja():
-    pass
-
-def jae():
-    pass
-
-def jb():
-    pass
-
-def jbe():
-    pass
-
 """ creación de las estructas y los datos """
 
 #instanciación de los objetos

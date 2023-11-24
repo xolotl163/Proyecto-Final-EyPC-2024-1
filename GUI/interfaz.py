@@ -1,12 +1,17 @@
+
+import dataStructures.observatorPattern as Obs
 import tkinter as tk
 from tkinter import filedialog
 
-class GUI:
+
+class GUI( Obs.ObservableSubject ): #hereda de la clase indicada para poder usar el aptron
 
     #constructor del objeto
     def __init__(self, nombre):
-        
         self.nombre = nombre
+        self.observators = []
+        self.observables = []
+        print("se creo el observable")
 
         # Crear la ventana principal
         self.root = tk.Tk()
@@ -49,6 +54,8 @@ class GUI:
                 self.text_widget.delete(1.0, tk.END)  # Borrar contenido actual
                 self.text_widget.insert(tk.END, contenido)
                 self.text_widget.config(state=tk.DISABLED)
+
+                self.notifyObs()
 
     def cargar_archivo_derecha(self):
         ruta_archivo = filedialog.askopenfilename(title="Seleccionar archivo", filetypes=[("Archivos de texto", "*.txt")])
