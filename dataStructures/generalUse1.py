@@ -89,204 +89,210 @@ class Stack:
 
 """seccion definicion de funciones"""
 
-#funciones auxiliares
-def fillGaps( a1, a2 ):
-    size1 = len(a1)
-    size2 = len(a2)
+class Operations:
 
-    if size1 == size2:
-        return
+    def __init__(self):
+        pass
 
-    if size1 > size2:
-        top = size1
-        bottom = size2
-        #greater = a1
-        smaller = a2
+    #funciones auxiliares
+    def fillGaps(self, a1, a2 ):
+        size1 = len(a1)
+        size2 = len(a2)
 
-        gap = top - bottom
+        if size1 == size2:
+            return
+
+        if size1 > size2:
+            top = size1
+            bottom = size2
+            #greater = a1
+            smaller = a2
+
+            gap = top - bottom
+            i = 0
+            while i < gap:
+                smaller = "0" +  smaller
+                i += 1
+
+            a2 = aux
+
+        else:
+            top = size2
+            bottom = size1
+            #greater = a2
+            smaller = a1
+
+            gap = top - bottom
+            i = 0
+            while i < gap:
+                aux = "0" +  smaller
+                i += 1
+
+            a1 = aux
+
+    #arimeticas
+    def add(self, a1, a2 ):
+        regAx = a1 + a2
+
+    def sub(self, a1, a2 ):
+        a1 = a1 - a2
+
+    def mul(self, a1, a2 ):
+        a1 = a1 * a2
+
+    def cmp(self, a1, a2 ):
+
+        #se ponen a valor inicial (false) las banderas de comparacion
+        Flags.getDictionary("bool")["EF"] = False
+        Flags.getDictionary("bool")["GF"] = False
+        Flags.getDictionary("bool")["SMF"] = False
+
+        if a1 == a2:
+            Flags.getDictionary("bool")["EF"] = True
+        elif a1 > a2:
+            Flags.getDictionary("bool")["GF"] = True
+        elif a1 < a2:
+            Flags.getDictionary("bool")["SMF"] = True
+
+    def divC(self, a1, a2 ):
+        a1 = a1 / a2
+
+    def divR(self, a1, a2 ):
+        a1 = a1 % a2
+
+    #logicas
+    def AND(self, a1, a2 ):
+
+        self.fillGaps( a1, a2 )
+        size = len(a1)
+
         i = 0
-        while i < gap:
-            smaller = "0" +  smaller
+        while i < size:
+            if (a1[i] == '1') and (a2[i] == '1'):
+                a1[i] == '1'
+            elif (a1[i] == '1') and (a2[i] == '0'):
+                a1[i] == '0'
+            elif (a1[i] == '0') and (a2[i] == '1'):
+                a1[i] == '0'
+            elif (a1[i] == '0') and (a2[i] == '0'):
+                a1[i] == '0'
+
             i += 1
 
-        a2 = aux
+    def OR(self, a1, a2 ):
 
-    else:
-        top = size2
-        bottom = size1
-        #greater = a2
-        smaller = a1
+        self.fillGaps( a1, a2 )
+        size = len(a1)
 
-        gap = top - bottom
         i = 0
-        while i < gap:
-            aux = "0" +  smaller
+        while i < size:
+            if (a1[i] == '1') or (a2[i] == '1'):
+                a1[1] = '1'
             i += 1
 
-        a1 = aux
+    def NOT(self, a1 ):
 
-#arimeticas
-def add( a1, a2 ):
-    regAx = a1 + a2
+        size = len(a1)
 
-def sub( a1, a2 ):
-    a1 = a1 - a2
+        i = 0
+        while i < size:
+            if a1[i] == '1':
+                a1[i] = '0'
+            elif a1[i] == '0':
+                a1[i] = '1'
+            i += 1 
 
-def mul( a1, a2 ):
-    a1 = a1 * a2
+    def XOR(self, a1, a2 ):
 
-def cmp( a1, a2 ):
+        self.fillGaps( a1, a2 )
+        size = len(a1)
 
-    #se ponen a valor inicial (false) las banderas de comparacion
-    Flags.getDictionary("bool")["EF"] = False
-    Flags.getDictionary("bool")["GF"] = False
-    Flags.getDictionary("bool")["SMF"] = False
+        i = 0
+        while i < size:
+            if (a1[i] == '1') and (a2[i] == '1'):
+                a1[i] == '0'
+            elif (a1[i] == '1') and (a2[i] == '0'):
+                a1[i] == '1'
+            elif (a1[i] == '0') and (a2[i] == '1'):
+                a1[i] == '1'
+            elif (a1[i] == '0') and (a2[i] == '0'):
+                a1[i] == '0'
+            i += 1
 
-    if a1 == a2:
-        Flags.getDictionary("bool")["EF"] = True
-    elif a1 > a2:
-        Flags.getDictionary("bool")["GF"] = True
-    elif a1 < a2:
-        Flags.getDictionary("bool")["SMF"] = True
-    
-def divC( a1, a2 ):
-    a1 = a1 / a2
+    def shl(self, a1, n ):
 
-def divR( a1, a2 ):
-    a1 = a1 % a2
+        i = 0
+        while i < n:
+            a1 = a1 + "0"
+            i += 1
 
-#logicas
-def AND( a1, a2 ):
+    def shr(self, a1, n ):
 
-    fillGaps( a1, a2 )
-    size = len(a1)
+        i = 0 
+        while i < n:
+            a1 = "0" + a1
+            i += 1
 
-    i = 0
-    while i < size:
-        if (a1[i] == '1') and (a2[i] == '1'):
-            a1[i] == '1'
-        elif (a1[i] == '1') and (a2[i] == '0'):
-            a1[i] == '0'
-        elif (a1[i] == '0') and (a2[i] == '1'):
-            a1[i] == '0'
-        elif (a1[i] == '0') and (a2[i] == '0'):
-            a1[i] == '0'
+    def ROR(self, a1, n ):
 
-        i += 1
+        size = len(a1)
+        aux1 = []
+        aux2 = []
 
-def OR( a1, a2 ):
-    
-    fillGaps( a1, a2 )
-    size = len(a1)
+        A = size - n
+        for i in range( A, size ):
+            aux1.append( a1[i] )
 
-    i = 0
-    while i < size:
-        if (a1[i] == '1') or (a2[i] == '1'):
-            a1[1] = '1'
-        i += 1
+        B = size - A
+        for i in range( 0, B ):
+            aux2.append( a1[i] )
 
-def NOT( a1 ):
-    
-    size = len(a1)
+        a1 = aux1 + aux2
 
-    i = 0
-    while i < size:
-        if a1[i] == '1':
-            a1[i] = '0'
-        elif a1[i] == '0':
-            a1[i] = '1'
-        i += 1 
+    def ROL(self, a1, n ):
 
-def XOR( a1, a2 ):
-    
-    fillGaps( a1, a2 )
-    size = len(a1)
+        size = len(a1)
+        aux1 = []
+        aux2 = []
 
-    i = 0
-    while i < size:
-        if (a1[i] == '1') and (a2[i] == '1'):
-            a1[i] == '0'
-        elif (a1[i] == '1') and (a2[i] == '0'):
-            a1[i] == '1'
-        elif (a1[i] == '0') and (a2[i] == '1'):
-            a1[i] == '1'
-        elif (a1[i] == '0') and (a2[i] == '0'):
-            a1[i] == '0'
-        i += 1
+        for i in range( 0, n ):
+            aux1.append( a1[i] )
 
-def shl( a1, n ):
+        for i in range( n, size ):
+            aux2.append( a1[i] )
 
-    i = 0
-    while i < n:
-        a1 = a1 + "0"
-        i += 1
+        a1 = aux2 + aux1
 
-def shr( a1, n ):
-    
-    i = 0 
-    while i < n:
-        a1 = "0" + a1
-        i += 1
+    def test(self, a1, a2 ):
+        pass
 
-def ROR( a1, n ):
+    #administracion de memoria
+    def mov(self, target, origin ):
+        Registers.editElement( "data", target, origin )
 
-    size = len(a1)
-    aux1 = []
-    aux2 = []
+    def wrt(self, message ):
+        print( message )
 
-    A = size - n
-    for i in range( A, size ):
-        aux1.append( a1[i] )
-    
-    B = size - A
-    for i in range( 0, B ):
-        aux2.append( a1[i] )
+    def read(self, target ):
+        target = input()
 
-    a1 = aux1 + aux2
+    #uso de stacks y funciones
+    def call(self, name ):
+        pass 
 
-def ROL( a1, n ):
+    def puAS(self, a1 ):
+        ArgumentStack.push( a1 )
 
-    size = len(a1)
-    aux1 = []
-    aux2 = []
+    def popSF(self):
+        FunctionStack.pop()
 
-    for i in range( 0, n ):
-        aux1.append( a1[i] )
-
-    for i in range( n, size ):
-        aux2.append( a1[i] )
-
-    a1 = aux2 + aux1
-
-def test( a1, a2 ):
-    pass
-
-#administracion de memoria
-def mov( target, origin ):
-    Registers.editElement( "data", target, origin )
-
-def wrt( message ):
-    print( message )
-
-def read( target ):
-    target = input()
-
-#uso de stacks y funciones
-def call( name ):
-    pass 
-
-def puAS( a1 ):
-    ArgumentStack.push( a1 )
-
-def popSF():
-    FunctionStack.pop()
-
-def popAS():
-    ArgumentStack.pop()
+    def popAS(self):
+        ArgumentStack.pop()
 
 """ creación de las estructas y los datos """
 
 #instanciación de los objetos
+Operations0 = Operations()
 Flags = Dictionary("flags")
 Registers = Dictionary("registers")
 Instructions = Dictionary("instructions")
