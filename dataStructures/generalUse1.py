@@ -29,7 +29,7 @@ class Dictionary:
         return self.getMainDict()[ nameDict ]
 
     def getElement(self, dictionary, key):
-        return self.getDictionary()[ dictionary ][ key ]
+        return self.getMainDict()[ dictionary ][ key ]
 
     #general methods
     def addDictionary(self, nameDictionary):
@@ -302,8 +302,6 @@ ArgumentStack = Stack("argument stack")
 
 #creación de los diccionarios
 Flags.addDictionary("bool")
-Flags.addDictionary("binary")
-Registers.addDictionary("binary")
 Registers.addDictionary("data")
 Instructions.addDictionary("binary")
 
@@ -314,13 +312,6 @@ Flags.addElement( "bool", "ZF",  False)
 Flags.addElement( "bool", "EF",  False)
 Flags.addElement( "bool", "GF",  False)
 Flags.addElement( "bool", "SMF", False)
-
-Flags.addElement( "binary", "CF",  "0000")
-Flags.addElement( "binary", "OF",  "0001")
-Flags.addElement( "binary", "ZF",  "0010")
-Flags.addElement( "binary", "EF",  "0011")
-Flags.addElement( "binary", "GF",  "0100")
-Flags.addElement( "binary", "SMF", "0101")
 
 Registers.addElement( "data", "r1", None )
 Registers.addElement( "data", "r2", None )
@@ -333,17 +324,22 @@ Registers.addElement( "data", "rW", None )
 Registers.addElement( "data", "rSA", None )
 Registers.addElement( "data", "rSF", None )
 
-Registers.addElement( "binary", "r1",  "0000")
-Registers.addElement( "binary", "r2",  "0001")
-Registers.addElement( "binary", "r3",  "0010")
-Registers.addElement( "binary", "r4",  "0011")
-Registers.addElement( "binary", "r5",  "0100")
-Registers.addElement( "binary", "r6",  "0101")
-Registers.addElement( "binary", "rR",  "0110")
-Registers.addElement( "binary", "rW",  "0111")
-Registers.addElement( "binary", "rSA", "1000")
-Registers.addElement( "binary", "rSF", "1001")
-
+Instructions.addElement( "binary", "CF",  "0000")
+Instructions.addElement( "binary", "OF",  "0001")
+Instructions.addElement( "binary", "ZF",  "0010")
+Instructions.addElement( "binary", "EF",  "0011")
+Instructions.addElement( "binary", "GF",  "0100")
+Instructions.addElement( "binary", "SMF", "0101")
+Instructions.addElement( "binary", "r1",  "0000")
+Instructions.addElement( "binary", "r2",  "0001")
+Instructions.addElement( "binary", "r3",  "0010")
+Instructions.addElement( "binary", "r4",  "0011")
+Instructions.addElement( "binary", "r5",  "0100")
+Instructions.addElement( "binary", "r6",  "0101")
+Instructions.addElement( "binary", "rR",  "0110")
+Instructions.addElement( "binary", "rW",  "0111")
+Instructions.addElement( "binary", "rSA", "1000")
+Instructions.addElement( "binary", "rSF", "1001")
 Instructions.addElement( "binary", "add",  "000000")
 Instructions.addElement( "binary", "sub",  "000001")
 Instructions.addElement( "binary", "mul",  "000010")

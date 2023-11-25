@@ -19,6 +19,36 @@ class processArchive( Obs.Observator ):
         match type:
             
             case "translate":
+
+                with open( archiveRute, 'r' ) as file:
+                    content = file.readlines()
+                    print("Entrada: ")
+                    print( content )
+
+                actualWord = []
+                outPut = []
+                translatedLine = []
+
+                for line in content:
+
+                    if line == "\n":
+                        content.remove( line )
+                    else:
+                        for letter in line:
+                            if letter == "\n": #termina la linea
+                                continue
+                            elif letter == " ":
+                                translatedLine.append( instructions.getElement( "binary", "".join(actualWord) ) )
+                                actualWord = []
+                            else:
+                                actualWord.append( letter )
+
+                    outPut.append( str( translatedLine ) )
+                    actualWord = []
+                    translatedLine = []
+
+                print( "salida" )
+                print( outPut )
                 print( "\nSe ha procesado el archivo" )
 
             case "alreadyTranslated":

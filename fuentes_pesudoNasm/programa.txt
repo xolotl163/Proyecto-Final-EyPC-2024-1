@@ -1,0 +1,13 @@
+
+mov r6 r1
+mov r5 r2
+add r6 r5
+mov r1 r6
+cmp r1 r6
+je 0101
+
+mov r1 r4
+mov r2 r5
+sub r2 r1
+cmp r2 r1
+je r6
