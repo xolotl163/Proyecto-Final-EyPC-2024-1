@@ -1,6 +1,7 @@
 
 import GUI.interfaz as GUI
 import dataStructures.processArchive as PrArch
+import dataStructures.generalUse1 as generalUses
 
 #sección de creacion e inicialización de objetos generales al programa
 userInterface = GUI.UserInterface

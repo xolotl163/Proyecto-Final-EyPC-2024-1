@@ -96,6 +96,7 @@ class Operations:
 
     #funciones auxiliares
     def fillGaps(self, a1, a2 ):
+
         size1 = len(a1)
         size2 = len(a2)
 
@@ -111,10 +112,11 @@ class Operations:
             gap = top - bottom
             i = 0
             while i < gap:
-                smaller = "0" +  smaller
+                #smaller.insert( 0, '0' )
+                smaller = "0"+smaller
                 i += 1
-
-            a2 = aux
+            a2 = smaller
+            print( a2 )
 
         else:
             top = size2
@@ -125,14 +127,15 @@ class Operations:
             gap = top - bottom
             i = 0
             while i < gap:
-                aux = "0" +  smaller
+                #smaller.insert( 0, '0' )
+                smaller = "0"+smaller
                 i += 1
-
-            a1 = aux
+            a1 = smaller
+            print( a1 )
 
     #arimeticas
     def add(self, a1, a2 ):
-        regAx = a1 + a2
+        a1 = a1 + a2
 
     def sub(self, a1, a2 ):
         a1 = a1 - a2
