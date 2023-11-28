@@ -1,0 +1,11 @@
+
+mov r1 8
+mov r2 6
+add r1 r2
+cmp r1 0
+je r3
+
+mov r1 63
+not r1
+cmp r1 r2
+je r4
