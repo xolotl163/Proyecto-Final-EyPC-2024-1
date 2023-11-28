@@ -1,4 +1,5 @@
 
+import os
 from . import generalUse1 as generalUses
 from . import observatorPattern as Obs
 from . import decimal_a_binario as binaryConvert
@@ -85,8 +86,11 @@ class processArchive( Obs.Observator ):
                 #print( outPut )
                 print( "\nSe ha procesado el archivo\n" )
 
-                archOutRute = "/media/greem/Documentos/escuela/clases/programacion de computadoras/proyectoFinal_EyPC/auxArchives/translated.txt"
-                with open( archOutRute, 'w' ) as outPutArch:   
+                
+                scriptDir = os.path.dirname( os.path.abspath( __file__ ) )
+                relativePath = os.path.join( scriptDir, '..', 'auxArchives', 'translated.txt' )
+                print( relativePath )
+                with open( relativePath, 'w' ) as outPutArch:   
                     for line in outPut:
                         for word in line:
                             outPutArch.write( word )
