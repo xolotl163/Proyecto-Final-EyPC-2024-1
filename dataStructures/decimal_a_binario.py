@@ -1,3 +1,4 @@
+
 def decimal_a_binario(numero):
     # Convierte un número decimal a binario
     if numero < 0:

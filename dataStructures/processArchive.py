@@ -22,32 +22,34 @@ class processArchive( Obs.Observator ):
 
                 with open( archiveRute, 'r' ) as file:
                     content = file.readlines()
-                    print("Entrada: ")
-                    print( content )
+                    #print("Entrada: ")
+                    #print( content )
 
                 actualWord = []
                 outPut = []
                 translatedLine = []
 
                 for line in content:
-
+                    print( "line: "+str(line) )
                     if line == "\n":
                         continue
                     else:
+
                         for letter in line:
                             if letter == " " or letter == "\n":
                                 translatedLine.append( instructions.getElement( "binary", "".join(actualWord) ) )
+                                print( "actualWord: " + str(actualWord) )
                                 actualWord = []
                             else:
                                 actualWord.append( letter )
 
                     outPut.append( translatedLine )
-                    actualWord = []
                     translatedLine = []
 
-                print( "\nProceso 1: " )
-                print( outPut )
+                #print( "\n\nProceso 1: " )
+                #print( outPut )
 
+                """
                 for i in range( len(outPut)):
                     
                     line = outPut[i]
@@ -78,14 +80,29 @@ class processArchive( Obs.Observator ):
                                     k += 1
                                 
                                 outPut[i][j] = smaller
-                
+                """
+                ref1Arg = "000000000000000000"
+                ref2Arg = "000000000"
+
+                print( "\nlen output: "+str( len( outPut ) ) )
+                for i in range( len(outPut)):
+                    sizeLine = len( outPut[i] )
+
+                    match sizeLine:
+
+                        case 2: #la instruccion tiene 1 argumento
+                            outPut[i][1] = operations.fillGaps( ref1Arg, outPut[i][1] )
+                        
+                        case 3: #la instruccion tiene 2 argumentos
+                            outPut[i][1] = operations.fillGaps( ref2Arg, outPut[i][1] )
+                            outPut[i][2] = operations.fillGaps( ref2Arg, outPut[i][2] )
+
                 print("Proceso 2:")
                 print( outPut )
                 print( "\nSe ha procesado el archivo\n" )
 
                 archOutRute = "/media/greem/Documentos/escuela/clases/programacion de computadoras/proyectoFinal_EyPC/auxArchives/translated.txt"
-                with open( archOutRute, 'w' ) as outPutArch:
-                    
+                with open( archOutRute, 'w' ) as outPutArch:   
                     for line in outPut:
                         for word in line:
                             outPutArch.write( word )

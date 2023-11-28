@@ -104,19 +104,17 @@ class Operations:
             return
 
         if size1 > size2:
+
             top = size1
             bottom = size2
             #greater = a1
             smaller = a2
 
             gap = top - bottom
-            i = 0
-            while i < gap:
-                #smaller.insert( 0, '0' )
-                smaller = "0"+smaller
-                i += 1
-            a2 = smaller
-            print( a2 )
+            for i in range( gap ):
+                a2 = "0" + a2
+
+            return a2
 
         else:
             top = size2
@@ -125,13 +123,10 @@ class Operations:
             smaller = a1
 
             gap = top - bottom
-            i = 0
-            while i < gap:
-                #smaller.insert( 0, '0' )
-                smaller = "0"+smaller
-                i += 1
-            a1 = smaller
-            print( a1 )
+            for j in range( gap ):
+                a1 = "0" + a1
+
+            return a1
 
     #arimeticas
     def add(self, a1, a2 ):
