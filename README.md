@@ -5,9 +5,17 @@ Prof. Alberto Navarrete Hernández
 
 Alumnos:
     
-    -> Chavez Madrid Ismael Angel
-    -> Hernández Jiménez Efrén Antonio
-    -> Padilla Cazares Jesus Alejandro 
+    Chavez Madrid Ismael Angel
+    Hernández Jiménez Efrén Antonio
+    Padilla Cazares Jesus Alejandro 
+
+Nota:
+
+    Se pueden crear con extensión .txt en donde se escriba las instrucciones en pseduo-nasm, además de poder guardarse en cualquier carpeta a elección del usuario. El archivo de salida, con extensión .txt se guardará en una carpeta llamada "auxArchives" en la misa ruta en la que se encuentra el ejecutable o binario. 
+
+    No se coloca directamente el archivo procesado en la ventana derecha de texto, sino que hay que cargarlo desde el boton indicado en la GUI.
+
+    Por otro lado, se anexa en el archvio .zip un ejecutable compilado para distribuciones linux de 64b basadas en Debian o Ubuntu. 
 
 Descripción general:
 
@@ -16,7 +24,6 @@ Descripción general:
        capaz de tomar la estructura asignada para el pesudolenguaje de programación creado,
        parecido a NASM x86, y convertir las instrucciones o directivas dadas a sus equivalentes
        binarios, o mejor dicho, al codigo binario equivalente. 
-
 
 Instrucciones:
 
