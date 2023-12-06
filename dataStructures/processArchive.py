@@ -16,27 +16,29 @@ class processArchive( Obs.Observator ):
     def __init__(self, name):
         self.name = name
 
-    def update(self, type, archiveRute):
+    def update(self, type, archiveRuteIn, archiveRuteOut):
         
         match type:
             
-            case "translate":
+            case "saveTranslated":
 
-                with open( archiveRute, 'r' ) as file:
+                with open( archiveRuteIn, 'r' ) as file:
                     content = file.readlines()
                     #print("Entrada: ")
                     #print( content )
-
-                a = len( content ) - 1 #indice de la ultima linea              
+                    
+                a = len( content ) - 1 #indice de la ultima linea
+                print( a )              
                 content[a] = content[a] + '\n'
 
+                
                 actualWord = []
                 outPut = []
                 translatedLine = []
 
                 for i in range( len(content)):
                     line = content[i]
-                    print( "line: "+str(line) )
+                    #print( "line: "+str(line) )
                     
                     if line == "\n":
                         continue
@@ -85,20 +87,20 @@ class processArchive( Obs.Observator ):
                 #print("Proceso 2:")
                 #print( outPut )
                 print( "\nSe ha procesado el archivo\n" )
-
                 
-                scriptDir = os.path.dirname( os.path.abspath( __file__ ) )
-                relativePath = os.path.join( scriptDir, '..', 'auxArchives', 'translated.txt' )
-                print( relativePath )
-                with open( relativePath, 'w' ) as outPutArch:   
+                with open( archiveRuteOut, 'w' ) as outPutArch:   
                     for line in outPut:
+
+                        k = len( line )
+                        line[ k-1 ] = line[k-1] + "\n"
+                        
                         for word in line:
                             outPutArch.write( word )
-                
-            case "alreadyTranslated":
+                            
+            case "load_leftArchive":
                 print( "ya se tradujo" )
 
-            case "saveTranslated":
+            case "load_rightArchive":
                 print( "guardar traducido" )
 
 

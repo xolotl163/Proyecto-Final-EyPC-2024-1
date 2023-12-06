@@ -21,6 +21,6 @@ class ObservableSubject:
     def rmvObservator( self, obr ):
         self.observators.remove( obr )
 
-    def notifyObs( self, message, archiveRute ):
+    def notifyObs( self, message, archiveRuteIn, archiveRuteOut ):
         for ob in self.observators:
-            ob.update(message, archiveRute)
+            ob.update(message, archiveRuteIn, archiveRuteOut)

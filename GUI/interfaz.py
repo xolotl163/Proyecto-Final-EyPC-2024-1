@@ -11,6 +11,8 @@ class GUI( Obs.ObservableSubject ): #hereda de la clase indicada para poder usar
         self.nombre = nombre
         self.observators = []
         self.observables = []
+        self.archiveRuteIn = ""
+        self.archiveRuteOut = ""
         print("se creo el observable")
 
         # Crear la ventana principal
@@ -41,43 +43,39 @@ class GUI( Obs.ObservableSubject ): #hereda de la clase indicada para poder usar
         self.load_button_derecha.pack(side=tk.RIGHT, pady=5)
 
     def mainLoop(self):
-
         # Iniciar el bucle principal de la aplicación
         self.root.mainloop()
 
     def cargar_archivo(self):
-        ruta_archivo = filedialog.askopenfilename(title="Seleccionar archivo", filetypes=[("Archivos de texto", "*.txt")])
-        if ruta_archivo:
-            with open(ruta_archivo, 'r') as file:
+        self.archiveRuteIn = filedialog.askopenfilename(title="Seleccionar archivo", filetypes=[("Archivos de texto", "*.txt")])
+        if self.archiveRuteIn:
+            with open(self.archiveRuteIn, 'r') as file:
                 contenido = file.read()
                 self.text_widget.config(state=tk.NORMAL)
                 self.text_widget.delete(1.0, tk.END)  # Borrar contenido actual
                 self.text_widget.insert(tk.END, contenido)
                 self.text_widget.config(state=tk.DISABLED)
 
-                self.notifyObs( "translate", ruta_archivo )
+                #self.notifyObs( "load_leftArchive", self.archiveRuteIn )
 
     def cargar_archivo_derecha(self):
-        ruta_archivo = filedialog.askopenfilename(title="Seleccionar archivo", filetypes=[("Archivos de texto", "*.txt")])
-        if ruta_archivo:
-            with open(ruta_archivo, 'r') as file:
+        self.archiveRuteOut = filedialog.askopenfilename(title="Seleccionar archivo", filetypes=[("Archivos de texto", "*.txt")])
+        if self.archiveRuteOut:
+            with open(self.archiveRuteOut, 'r') as file:
                 contenido = file.read()
                 self.text_widget_derecha.config(state=tk.NORMAL)
                 self.text_widget_derecha.delete(1.0, tk.END)  # Borrar contenido actual
                 self.text_widget_derecha.insert(tk.END, contenido)
                 self.text_widget_derecha.config(state=tk.DISABLED)
 
-                self.notifyObs( "alreadyTranlsated", ruta_archivo )
+                #self.notifyObs( "load_rightArchive", self.archiveRuteOut )
 
     def guardar_archivo(self):
-        ruta_archivo = filedialog.asksaveasfilename(title="Guardar como", filetypes=[("Archivos de texto", "*.txt")])
-        if ruta_archivo:
-            with open(ruta_archivo, 'w') as file:
-                contenido = tk.text_widget.get(1.0, tk.END)
-                file.write(contenido)
+        
+        self.archiveRuteOut = filedialog.asksaveasfilename(title="Guardar como", filetypes=[("Archivos de texto", "*.txt")])
+        if self.archiveRuteIn:
 
-                self.notifyObs( "saveTranslated", ruta_archivo )
-
+            self.notifyObs( "saveTranslated", self.archiveRuteIn, self.archiveRuteOut )
             self.status_label.config(text="Archivo guardado correctamente.")
 
 """ seccion de creacion de objetos """

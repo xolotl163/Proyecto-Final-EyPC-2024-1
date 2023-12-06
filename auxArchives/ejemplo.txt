@@ -1,4 +1,6 @@
 
+mov r3 47
+
 mov r6 r1
 mov r5 r2
 add r6 r5

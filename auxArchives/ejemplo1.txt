@@ -1,4 +1,7 @@
 
+mov r3 17
+mov r4 23
+
 mov r1 8
 mov r2 6
 add r1 r2

@@ -1,8 +1,12 @@
 
+mov r5 37
+mov r6 43
+
 mov r1 25
 mov r2 52
 mul r1 r2
 mov r3 4
 sub r3 r1
 cmp r2 r1
+
 je r5
