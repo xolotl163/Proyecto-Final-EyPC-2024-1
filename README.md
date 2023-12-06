@@ -9,7 +9,16 @@ Alumnos:
     Hernández Jiménez Efrén Antonio
     Padilla Cazares Jesus Alejandro 
 
-Nota:
+Nota 1:
+
+    El día de hoy, 06 de diciembre de 2023 entregamos nuestro proyecto aproximadamente a las 11:00 AM. El profesor lo reviso y nos pidió efectuar algunos cambios al codigo y en la forma
+    en la que se muestra el codigo binario al publico.
+
+    Ya se ha anotado que hemos entregado el proyecto, solamente se requería hacer la actualización y refactorización de funciones. 
+
+    Se vuelve a subir el proyecto a classroom, aproximadamente a las 04:30 PM. 
+
+Nota 2:
 
     Se pueden crear con extensión .txt en donde se escriba las instrucciones en pseduo-nasm, además de poder guardarse en cualquier carpeta a elección del usuario. El archivo de salida, con extensión .txt se guardará en una carpeta llamada "auxArchives" en la misa ruta en la que se encuentra el ejecutable o binario. 
 
